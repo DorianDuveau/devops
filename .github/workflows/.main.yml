@@ -45,6 +45,7 @@ jobs:
           context: ./simple-api-main
           # Note: tags has to be all lower-case
           tags: ${{secrets.DOCKERHUB_USERNAME}}/simple-api
+          push: true
 
       - name: Build image and push database
         uses: docker/build-push-action@v2
@@ -53,6 +54,7 @@ jobs:
           context: ./DB
           # Note: tags has to be all lower-case
           tags: ${{secrets.DOCKERHUB_USERNAME}}/db
+          push: true
 
       - name: Build image and push httpd
         uses: docker/build-push-action@v2
@@ -61,3 +63,4 @@ jobs:
           context: ./httpd
           # Note: tags has to be all lower-case
           tags: ${{secrets.DOCKERHUB_USERNAME}}/httpd
+          push: true
