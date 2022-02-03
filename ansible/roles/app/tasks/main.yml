@@ -1,0 +1,10 @@
+- name: Run Backend
+  docker_container:
+    name: backend
+    image: judodo/simple-api
+    state: started
+    exposed_ports:
+      - 8080
+    networks:
+      - name: backend
+      - name: frontend
